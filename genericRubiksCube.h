@@ -45,6 +45,10 @@ public:
 
     void print() const;
 
+    RubiksCube &move(MOVE ind);
+
+    RubiksCube &invert(MOVE ind);
+
     vector<MOVE> randomShuffleColor(unsigned int times);
 
     virtual RubiksCube &f() = 0;
@@ -82,12 +86,6 @@ public:
     virtual RubiksCube &bPrime() = 0;
 
     virtual RubiksCube &b2() = 0;
-
-    string getCornerColorString(uint8_t ind) const;
-
-    uint8_t getCornerIndex(uint8_t ind) const;
-
-    uint8_t getCornerOrientation(uint8_t ind) const;
 
 };
 
