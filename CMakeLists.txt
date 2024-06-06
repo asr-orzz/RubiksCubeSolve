@@ -3,4 +3,6 @@ project(RUbiks)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(RUbiks main.cpp)
+add_executable(RUbiks main.cpp
+        genericRubiksCube.cpp
+        genericRubiksCube.h)
