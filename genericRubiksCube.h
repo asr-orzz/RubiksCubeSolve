@@ -45,6 +45,10 @@ public:
 
     void print() const;
 
+    RubiksCube &move(MOVE ind);
+
+    RubiksCube &invert(MOVE ind);
+
     vector<MOVE> randomShuffleColor(unsigned int times);
 
     virtual RubiksCube &f() = 0;
