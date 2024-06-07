@@ -10,12 +10,12 @@ using namespace std;
 class genericRubiksCube{
 public:
     enum class FACE{
-        FRONT,
-        DOWN,
-        RIGHT,
+        UP,
         LEFT,
+        FRONT,
+        RIGHT,
         BACK,
-        UP
+        DOWN
     };
     enum class COLOR{
         RED,
@@ -45,47 +45,47 @@ public:
 
     void print() const;
 
-    RubiksCube &move(MOVE ind);
+    genericRubiksCube &move(MOVE ind);
 
-    RubiksCube &invert(MOVE ind);
+    genericRubiksCube &invert(MOVE ind);
 
     vector<MOVE> randomShuffleColor(unsigned int times);
 
-    virtual RubiksCube &f() = 0;
+    virtual genericRubiksCube &f() = 0;
 
-    virtual RubiksCube &fPrime() = 0;
+    virtual genericRubiksCube &fPrime() = 0;
 
-    virtual RubiksCube &f2() = 0;
+    virtual genericRubiksCube &f2() = 0;
 
-    virtual RubiksCube &u() = 0;
+    virtual genericRubiksCube &u() = 0;
 
-    virtual RubiksCube &uPrime() = 0;
+    virtual genericRubiksCube &uPrime() = 0;
 
-    virtual RubiksCube &u2() = 0;
+    virtual genericRubiksCube &u2() = 0;
 
-    virtual RubiksCube &l() = 0;
+    virtual genericRubiksCube &l() = 0;
 
-    virtual RubiksCube &lPrime() = 0;
+    virtual genericRubiksCube &lPrime() = 0;
 
-    virtual RubiksCube &l2() = 0;
+    virtual genericRubiksCube &l2() = 0;
 
-    virtual RubiksCube &r() = 0;
+    virtual genericRubiksCube &r() = 0;
 
-    virtual RubiksCube &d() = 0;
+    virtual genericRubiksCube &d() = 0;
 
-    virtual RubiksCube &dPrime() = 0;
+    virtual genericRubiksCube &dPrime() = 0;
 
-    virtual RubiksCube &d2() = 0;
+    virtual genericRubiksCube &d2() = 0;
 
-    virtual RubiksCube &rPrime() = 0;
+    virtual genericRubiksCube &rPrime() = 0;
 
-    virtual RubiksCube &r2() = 0;
+    virtual genericRubiksCube &r2() = 0;
 
-    virtual RubiksCube &b() = 0;
+    virtual genericRubiksCube &b() = 0;
 
-    virtual RubiksCube &bPrime() = 0;
+    virtual genericRubiksCube &bPrime() = 0;
 
-    virtual RubiksCube &b2() = 0;
+    virtual genericRubiksCube &b2() = 0;
 
 };
 
