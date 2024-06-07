@@ -85,8 +85,8 @@ public:
         char temp[3]={};
         for(int i=0;i<3;i++) temp[i]=cube[2][i][0];
         for(int i=0;i<3;i++) cube[2][i][0]=cube[1][i][0];
-        for(int i=0;i<3;i++) cube[1][i][0]=cube[4][i][0];
-        for(int i=0;i<3;i++) cube[4][i][0]=cube[5][i][0];
+        for(int i=0;i<3;i++) cube[1][i][0]=cube[4][2-i][2];
+        for(int i=0;i<3;i++) cube[4][2-i][2]=cube[5][i][0];
         for(int i=0;i<3;i++) cube[5][i][0]=temp[i];
 
         return *this;
@@ -110,10 +110,10 @@ public:
 
         char temp[3]={};
         for(int i=0;i<3;i++) temp[i]=cube[0][2][i];
-        for(int i=0;i<3;i++) cube[0][2][i]=cube[1][2][i];
-        for(int i=0;i<3;i++) cube[1][2][i]=cube[5][2][i];
-        for(int i=0;i<3;i++) cube[5][2][i]=cube[3][2][i];
-        for(int i=0;i<3;i++) cube[3][2][i]=temp[i];
+        for(int i=0;i<3;i++) cube[0][2][i]=cube[1][2-i][2];
+        for(int i=0;i<3;i++) cube[1][2-i][2]=cube[5][0][2-i];
+        for(int i=0;i<3;i++) cube[5][0][2-i]=cube[3][i][0];
+        for(int i=0;i<3;i++) cube[3][i][0]=temp[i];
 
         return *this;
     }
@@ -130,4 +130,80 @@ public:
 
         return *this;
     }
+    genericRubiksCube &r() override{
+        this->rotateFace(3);
+
+        char temp[3]={};
+        for (int i = 0; i < 3; i++) temp[i] = cube[0][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[0][2 - i][2] = cube[2][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[2][2 - i][2] = cube[5][2 - i][2];
+        for (int i = 0; i < 3; i++) cube[5][2 - i][2] = cube[4][i][0];
+        for (int i = 0; i < 3; i++) cube[4][i][0] = temp[i];
+
+        return *this;
+    }
+    genericRubiksCube &rPrime() override{
+        this->r();
+        this->r();
+        this->r();
+
+        return *this;
+    }
+    genericRubiksCube &r2() override{
+        this->r();
+        this->r();
+
+        return *this;
+    }
+    genericRubiksCube &b() override{
+        this->rotateFace(4);
+
+        char temp[3]={};
+        for(int i=0;i<3;i++) temp[i]=cube[0][0][i];
+        for(int i=0;i<3;i++) cube[0][0][i]=cube[3][i][2];
+        for(int i=0;i<3;i++) cube[3][i][2]=cube[5][2-i][2];
+        for(int i=0;i<3;i++) cube[5][2-i][2]=cube[1][2-i][0];
+        for(int i=0;i<3;i++) cube[1][2-i][0]=temp[i];
+
+        return *this;
+    }
+    genericRubiksCube &bPrime() override{
+        this->b();
+        this->b();
+        this->b();
+
+        return *this;
+    }
+    genericRubiksCube &b2() override{
+        this->b();
+        this->b();
+
+        return *this;
+    }
+    genericRubiksCube &d() override{
+        this->rotateFace(5);
+
+        char temp[3]={};
+        for(int i=0;i<3;i++) temp[i]=cube[2][2][i];
+        for(int i=0;i<3;i++) cube[2][2][i]=cube[1][2][i];
+        for(int i=0;i<3;i++) cube[1][2][i]=cube[4][2][i];
+        for(int i=0;i<3;i++) cube[4][2][i]=cube[3][2][i];
+        for(int i=0;i<3;i++) cube[3][2][i]=temp[i];
+
+        return  *this;
+    }
+    genericRubiksCube &dPrime() override{
+        this->d();
+        this->d();
+        this->d();
+
+        return *this;
+    }
+    genericRubiksCube &d2() override{
+        this->d();
+        this->d();
+
+        return *this;
+    }
+
 };
