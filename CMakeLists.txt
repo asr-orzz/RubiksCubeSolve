@@ -8,4 +8,5 @@ add_executable(RUbiks main.cpp
         genericRubiksCube.h
         RubiksCube3darray.cpp
         RubiksCube1darray.cpp
+        RubiksCubeBitboard.cpp
 )
