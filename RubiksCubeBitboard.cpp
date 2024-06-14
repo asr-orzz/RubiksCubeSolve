@@ -33,6 +33,13 @@ public:
             }
         }
     }
+    COLOR getColor(FACE F,unsigned row,unsigned col) const override{
+        int face=(int)F;
+        if(row==1 and col==1) return (COLOR)face;
+        int num=cube[face];
 
+        
+
+    }
 
 };
