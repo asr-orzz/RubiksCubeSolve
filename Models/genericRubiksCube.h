@@ -18,12 +18,12 @@ public:
         DOWN
     };
     enum class COLOR{
-        RED,
         WHITE,
+        GREEN,
+        RED,
         BLUE,
         ORANGE,
-        YELLOW,
-        GREEN
+        YELLOW
     };
     enum class MOVE{
         L, LPRIME, L2,

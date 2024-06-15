@@ -7,17 +7,17 @@
 char genericRubiksCube::getColorLetter(COLOR color) {
     switch (color) {
         case COLOR::BLUE:
-            return B;
+            return 'B';
         case COLOR::RED:
-            return R;
+            return 'R';
         case COLOR::WHITE:
-            return W;
+            return 'W';
         case COLOR::GREEN:
-            return G;
+            return 'G';
         case COLOR::ORANGE:
-            return O;
+            return 'O';
         case COLOR::YELLOW:
-            return Y;
+            return 'Y';
     }
 }
 //returns move in string format
@@ -192,5 +192,5 @@ vector<genericRubiksCube::MOVE> genericRubiksCube::randomShuffleColor(unsigned i
     return shuffle_vector;
 }
 
-}
+
 

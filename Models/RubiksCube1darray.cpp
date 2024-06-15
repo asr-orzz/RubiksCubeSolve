@@ -60,12 +60,12 @@ public:
 
         char temp[3]={};
 
-        for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(1,0,i)];
-        for(int i = 0; i < 3; i++) cube[getIndex(1,0,i)] = cube[getIndex(2,0,i)];
-        for (int i = 0; i < 3; i++)cube[getIndex(2,0,i)] = cube[getIndex(3,0,i)];
-        for (int i = 0; i < 3; i++)cube[getIndex(3,0,i)] = cube[getIndex(4,0,i)];
-        for (int i = 0; i < 3; i++) cube[getIndex(4,0,i)] = temp[i];
 
+        for(int i=0;i<3;i++) temp[i]=cube[getIndex(2,0,i)];
+        for(int i=0;i<3;i++) cube[getIndex(2,0,i)]=cube[getIndex(3,0,i)];
+        for(int i=0;i<3;i++) cube[getIndex(3,0,i)]=cube[getIndex(4,0,i)];
+        for(int i=0;i<3;i++) cube[getIndex(4,0,i)]=cube[getIndex(1,0,i)];
+        for(int i=0;i<3;i++) cube[getIndex(1,0,i)]=temp[i];
         return *this;
     }
     genericRubiksCube &uPrime() override{
@@ -84,12 +84,12 @@ public:
     genericRubiksCube &l() override{
         this->rotateFace(1);
 
-        char temp[3]={};
+        char temp[3] = {};
         for(int i=0;i<3;i++) temp[i]=cube[getIndex(2,i,0)];
-        for(int i=0;i<3;i++) cube[getIndex(2,i,0)]=cube[getIndex(1,i,0)];
-        for(int i=0;i<3;i++) cube[getIndex(1,i,0)]=cube[getIndex(4,2-i,2)];
-        for(int i=0;i<3;i++) cube[getIndex(4,2-i,2)]=cube[getIndex(5,i,0)];
-        for(int i=0;i<3;i++) cube[getIndex(5,i,0)]=temp[i];
+        for(int i=0;i<3;i++) cube[getIndex(2,i,0)]=cube[getIndex(5,i,0)];
+        for(int i=0;i<3;i++) cube[getIndex(5,i,0)]=cube[getIndex(4,2-i,2)];
+        for(int i=0;i<3;i++) cube[getIndex(4,i,2)]=cube[getIndex(0,2-i,0)];
+        for(int i=0;i<3;i++) cube[getIndex(0,i,0)]=temp[i];
 
         return *this;
     }
@@ -109,13 +109,12 @@ public:
     genericRubiksCube &f() override{
         this->rotateFace(2);
 
-        char temp[3]={};
-        for(int i=0;i<3;i++) temp[i]=cube[getIndex(0,2,i)];
-        for(int i=0;i<3;i++) cube[getIndex(0,2,i)]=cube[getIndex(1,2-i,2)];
-        for(int i=0;i<3;i++) cube[getIndex(1,2-i,2)]=cube[getIndex(5,0,2-i)];
-        for(int i=0;i<3;i++) cube[getIndex(5,0,2-i)]=cube[getIndex(3,i,0)];
-        for(int i=0;i<3;i++) cube[getIndex(3,i,0)]=temp[i];
-
+        char temp[3] = {};
+        for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(0,2,i)] = cube[getIndex(1,2 - i,2)];
+        for (int i = 0; i < 3; i++) cube[getIndex(1,2 - i,2)] = cube[getIndex(5,0,2 - i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(5,0,2 - i)] = cube[getIndex(3,i,0)];
+        for (int i = 0; i < 3; i++) cube[getIndex(3,i,0)] = temp[i];
         return *this;
     }
     genericRubiksCube &fPrime() override{
@@ -134,12 +133,13 @@ public:
     genericRubiksCube &r() override{
         this->rotateFace(3);
 
-        char temp[3]={};
+        char temp[3] = {};
         for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,2 - i,2)];
         for (int i = 0; i < 3; i++) cube[getIndex(0,2 - i,2)] = cube[getIndex(2,2 - i,2)];
         for (int i = 0; i < 3; i++) cube[getIndex(2,2 - i,2)] = cube[getIndex(5,2 - i,2)];
         for (int i = 0; i < 3; i++) cube[getIndex(5,2 - i,2)] = cube[getIndex(4,i,0)];
         for (int i = 0; i < 3; i++) cube[getIndex(4,i,0)] = temp[i];
+
 
         return *this;
     }
@@ -159,12 +159,12 @@ public:
     genericRubiksCube &b() override{
         this->rotateFace(4);
 
-        char temp[3]={};
-        for(int i=0;i<3;i++) temp[i]=cube[getIndex(0,0,i)];
-        for(int i=0;i<3;i++) cube[getIndex(0,0,i)]=cube[getIndex(3,i,2)];
-        for(int i=0;i<3;i++) cube[getIndex(3,i,2)]=cube[getIndex(5,2-i,2)];
-        for(int i=0;i<3;i++) cube[getIndex(5,2-i,2)]=cube[getIndex(1,2-i,0)];
-        for(int i=0;i<3;i++) cube[getIndex(1,2-i,0)]=temp[i];
+        char temp[3] = {};
+        for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(0,0,2 - i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(0,0,2 - i)] = cube[getIndex(3,2 - i,2)];
+        for (int i = 0; i < 3; i++) cube[getIndex(3,2 - i,2)] = cube[getIndex(5,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(5,2,i)] = cube[getIndex(1,i,0)];
+        for (int i = 0; i < 3; i++) cube[getIndex(1,i,0)] = temp[i];
 
         return *this;
     }
@@ -184,12 +184,12 @@ public:
     genericRubiksCube &d() override{
         this->rotateFace(5);
 
-        char temp[3]={};
-        for(int i=0;i<3;i++) temp[i]=cube[getIndex(2,2,i)];
-        for(int i=0;i<3;i++) cube[getIndex(2,2,i)]=cube[getIndex(1,2,i)];
-        for(int i=0;i<3;i++) cube[getIndex(1,2,i)]=cube[getIndex(4,2,i)];
-        for(int i=0;i<3;i++) cube[getIndex(4,2,i)]=cube[getIndex(3,2,i)];
-        for(int i=0;i<3;i++) cube[getIndex(3,2,i)]=temp[i];
+        char temp[3] = {};
+        for (int i = 0; i < 3; i++) temp[i] = cube[getIndex(2,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(2,2,i)] = cube[getIndex(1,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(1,2,i)] = cube[getIndex(4,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(4,2,i)] = cube[getIndex(3,2,i)];
+        for (int i = 0; i < 3; i++) cube[getIndex(3,2,i)] = temp[i];
 
         return  *this;
     }

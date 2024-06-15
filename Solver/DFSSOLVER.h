@@ -2,43 +2,43 @@
 // Created by anees on 15-06-2024.
 //
 #include "bits/stdc++.h"
-#include "../Models/genericRubiksCube.h"
+#include "..\Models\genericRubiksCube.h"
 #ifndef RUBIKS_DFSSOLVER_H
 #define RUBIKS_DFSSOLVER_H
 
-template<typename T,typename H>
-
-class DFSSolver{
+template<typename T, typename H>
+class DFSSolver {
 private:
-    vector<genericRubiksCube::MOVE> moves;
-    int maxDepth;
 
-   bool dfs(int depth){
-       if(rubiksCube.solved()) return true;
-       if(depth>maxDepth) return false;
-       for(int i=0;i<18;i++){
-           rubiksCube.move(genericRubiksCube::MOVE(i));
-           moves.push_back(genericRubiksCube::MOVE(i));
-           if(dfs(depth+1)) return true;
-           moves.pop_back();
-           rubiksCube.invert(genericRubiksCube::MOVE(i));
-       }
-   }
+    vector<genericRubiksCube::MOVE> moves;
+    int max_search_depth;
+
+    bool dfs(int dep) {
+        if (rubiksCube.isSolved()) return true;
+        if (dep > max_search_depth) return false;
+        for (int i = 0; i < 18; i++) {
+            rubiksCube.move(genericRubiksCube::MOVE(i));
+            moves.push_back(genericRubiksCube::MOVE(i));
+            if (dfs(dep + 1)) return true;
+            moves.pop_back();
+            rubiksCube.invert(genericRubiksCube::MOVE(i));
+        }
+        return false;
+    }
+
 public:
     T rubiksCube;
 
-    DFSSolver(T _rubiksCube,int _maxDepth=8){
-        rubiksCube=_rubiksCube;
-        maxDepth=_maxDepth;
+    DFSSolver(T _rubiksCube, int _max_search_depth = 8) {
+        rubiksCube = _rubiksCube;
+        max_search_depth = _max_search_depth;
     }
-    vector<genericRubiksCube::MOVE> solve(){
-        moves.clear();
-        if(dfs(1)) return moves;
-        else{
-            return {};
-        }
-    }
-};
 
+    vector<genericRubiksCube::MOVE> solve() {
+        dfs(1);
+        return moves;
+    }
+
+};
 
 #endif //RUBIKS_DFSSOLVER_H
