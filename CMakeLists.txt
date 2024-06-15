@@ -4,9 +4,10 @@ project(RUbiks)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(RUbiks main.cpp
-        genericRubiksCube.cpp
-        genericRubiksCube.h
-        RubiksCube3darray.cpp
-        RubiksCube1darray.cpp
-        RubiksCubeBitboard.cpp
+        Models/genericRubiksCube.cpp
+        Models/genericRubiksCube.h
+        Models/RubiksCube3darray.cpp
+        Models/RubiksCube1darray.cpp
+        Models/RubiksCubeBitboard.cpp
+        Solver/DFSSOLVER.h
 )

@@ -55,29 +55,29 @@ build CMakeFiles/RUbiks.dir/main.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C
   OBJECT_DIR = CMakeFiles\RUbiks.dir
   OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir
 
-build CMakeFiles/RUbiks.dir/genericRubiksCube.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/genericRubiksCube.cpp || cmake_object_order_depends_target_RUbiks
-  DEP_FILE = CMakeFiles\RUbiks.dir\genericRubiksCube.cpp.obj.d
+build CMakeFiles/RUbiks.dir/Models/genericRubiksCube.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/Models/genericRubiksCube.cpp || cmake_object_order_depends_target_RUbiks
+  DEP_FILE = CMakeFiles\RUbiks.dir\Models\genericRubiksCube.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\RUbiks.dir
-  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir
+  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\Models
 
-build CMakeFiles/RUbiks.dir/RubiksCube3darray.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/RubiksCube3darray.cpp || cmake_object_order_depends_target_RUbiks
-  DEP_FILE = CMakeFiles\RUbiks.dir\RubiksCube3darray.cpp.obj.d
+build CMakeFiles/RUbiks.dir/Models/RubiksCube3darray.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/Models/RubiksCube3darray.cpp || cmake_object_order_depends_target_RUbiks
+  DEP_FILE = CMakeFiles\RUbiks.dir\Models\RubiksCube3darray.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\RUbiks.dir
-  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir
+  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\Models
 
-build CMakeFiles/RUbiks.dir/RubiksCube1darray.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/RubiksCube1darray.cpp || cmake_object_order_depends_target_RUbiks
-  DEP_FILE = CMakeFiles\RUbiks.dir\RubiksCube1darray.cpp.obj.d
+build CMakeFiles/RUbiks.dir/Models/RubiksCube1darray.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/Models/RubiksCube1darray.cpp || cmake_object_order_depends_target_RUbiks
+  DEP_FILE = CMakeFiles\RUbiks.dir\Models\RubiksCube1darray.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\RUbiks.dir
-  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir
+  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\Models
 
-build CMakeFiles/RUbiks.dir/RubiksCubeBitboard.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/RubiksCubeBitboard.cpp || cmake_object_order_depends_target_RUbiks
-  DEP_FILE = CMakeFiles\RUbiks.dir\RubiksCubeBitboard.cpp.obj.d
+build CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/Models/RubiksCubeBitboard.cpp || cmake_object_order_depends_target_RUbiks
+  DEP_FILE = CMakeFiles\RUbiks.dir\Models\RubiksCubeBitboard.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\RUbiks.dir
-  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir
+  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\Models
 
 
 # =============================================================================
@@ -87,7 +87,7 @@ build CMakeFiles/RUbiks.dir/RubiksCubeBitboard.cpp.obj: CXX_COMPILER__RUbiks_uns
 #############################################
 # Link the executable RUbiks.exe
 
-build RUbiks.exe: CXX_EXECUTABLE_LINKER__RUbiks_Debug CMakeFiles/RUbiks.dir/main.cpp.obj CMakeFiles/RUbiks.dir/genericRubiksCube.cpp.obj CMakeFiles/RUbiks.dir/RubiksCube3darray.cpp.obj CMakeFiles/RUbiks.dir/RubiksCube1darray.cpp.obj CMakeFiles/RUbiks.dir/RubiksCubeBitboard.cpp.obj
+build RUbiks.exe: CXX_EXECUTABLE_LINKER__RUbiks_Debug CMakeFiles/RUbiks.dir/main.cpp.obj CMakeFiles/RUbiks.dir/Models/genericRubiksCube.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube3darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube1darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RUbiks.dir
