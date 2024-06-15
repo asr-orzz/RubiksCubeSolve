@@ -223,6 +223,7 @@ public:
                 }
             }
         }
+        return *this;
     }
 };
 

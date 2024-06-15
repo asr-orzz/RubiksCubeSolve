@@ -206,4 +206,25 @@ public:
 
         return *this;
     }
+    bool operator==(const RubiksCube1darray &r1) const{
+        for(int i=0;i<54;i++){
+            if(r1.cube[i]!=cube[i]) return  false;
+        }
+        return  true;
+    }
+    RubiksCube1darray &operator=(const RubiksCube1darray &r1) {
+        for(int i=0;i<54;i++){
+            cube[i]=r1.cube[i];
+        }
+        return *this;
+    }
+};
+struct Hash1d{
+    size_t operator()(const RubiksCube1darray &r1) const{
+        string str="";
+        for(int i=0;i<54;i++){
+            str+=r1.cube[i];
+        }
+        return hash<string>()(str);
+    }
 };
