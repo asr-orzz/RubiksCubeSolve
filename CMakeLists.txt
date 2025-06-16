@@ -12,4 +12,5 @@ add_executable(RUbiks main.cpp
         Solver/DFSSOLVER.h
         Solver/BFSSOLVER.h
         Solver/IDDFSSolver.h
+        Solver/IDAstarSOLVER.h
 )
