@@ -1,64 +1,56 @@
 
+
 ```markdown
 # 🧩 Rubik's Cube Solver in C++
 
-A modular and high-performance 3x3 Rubik’s Cube solver in C++, supporting various cube representations, multiple solving strategies, and advanced heuristic optimization using pattern databases.
-
-> 🔗 [GitHub Repo](https://github.com/asr-orzz/RubiksCubeSolve)
+A modular and efficient C++ Rubik's Cube solver that supports multiple solving algorithms and cube representations. Includes IDA*, BFS, DFS, IDDFS algorithms and an optimized heuristic using a pattern database (PDB).
 
 ---
 
 ## 🚀 Features
 
-- 🔁 **Cube Representations**:
-  - `RubiksCube3dArray`
-  - `RubiksCube1dArray`
-  - `RubiksCubeBitboard`
+- 🧱 Multiple cube models:
+  - 3D Array (`RubiksCube3dArray`)
+  - 1D Array (`RubiksCube1dArray`)
+  - Bitboard (`RubiksCubeBitboard`)
 
-- 🔍 **Solving Algorithms**:
+- 🧠 Solvers implemented:
   - Depth-First Search (DFS)
   - Breadth-First Search (BFS)
   - Iterative Deepening DFS (IDDFS)
-  - Iterative Deepening A* (IDA\*) with heuristics
+  - IDA* Search (with corner pattern database)
 
-- 🧠 **Pattern Databases (PDB)**:
-  - Corner Pattern Database using `CornerDBMaker` and `CornerPatternDatabase`
-  - Efficient bit-level storage via `NibbleArray`
-
-- 🧪 **Testing Utilities**:
-  - Random cube scrambler
-  - Cube equality/hash functions
-  - Benchmark-ready structure
+- 💾 Pattern Databases:
+  - Efficient `CornerPatternDatabase`
+  - File-based persistent DB generation with `CornerDBMaker`
+  - `NibbleArray` for compact storage
 
 ---
 
-## 📂 Folder Structure
+## 🗂️ Project Structure
 
 ```
 
 RubiksCubeSolve/
 ├── Databases/
 │   └── CornerDB.text
-│
 ├── Models/
 │   ├── RubiksCube3darray.cpp
 │   ├── RubiksCube1darray.cpp
 │   ├── RubiksCubeBitboard.cpp
-│   ├── genericRubiksCube.{cpp,h}
+│   ├── genericRubiksCube.cpp / .h
 │   └── PatternDatabases/
-│       ├── CornerDBMaker.{cpp,h}
-│       ├── CornerPatternDatabase.{cpp,h}
-│       ├── PatternDatabase.{cpp,h}
-│       ├── NibbleArray.{cpp,h}
-│       ├── math.{cpp,h}
+│       ├── CornerDBMaker.cpp / .h
+│       ├── CornerPatternDatabase.cpp / .h
+│       ├── PatternDatabase.cpp / .h
+│       ├── NibbleArray.cpp / .h
+│       ├── math.cpp / .h
 │       └── PermutationIndexer.h
-│
 ├── Solver/
 │   ├── DFSSOLVER.h
 │   ├── BFSSOLVER.h
 │   ├── IDDFSSolver.h
 │   └── IDAstarSOLVER.h
-│
 ├── main.cpp
 └── CMakeLists.txt
 
@@ -66,53 +58,54 @@ RubiksCubeSolve/
 
 ---
 
-## 🛠️ Build Instructions
+## ⚙️ Build Instructions
 
 ### ✅ Requirements
 
-- C++17 compatible compiler
-- CMake (if using CLion or manual build)
+- C++17 or above
+- g++ / clang++
+- (Optional) CLion or any CMake-based IDE
 
-### 🔨 Build & Run
-
-#### Option 1: Command Line
+### 🔧 Compile & Run
 
 ```bash
-g++ -std=c++17 main.cpp -o RubiksSolver
-./RubiksSolver
+g++ -std=c++17 main.cpp -o RubikSolver
+./RubikSolver
 ````
 
-#### Option 2: CLion / CMake
-
-* Open project in CLion
-* Build and Run directly
+Or, open in CLion and build using CMake.
 
 ---
 
-## 📘 Example Workflow
+## 💡 Example Usage
 
-### 1. Generate Corner Database (once):
+### Generate Corner Pattern Database
 
 ```cpp
 CornerDBMaker dbMaker("Databases/CornerDB.text", 0x99);
-dbMaker.bfsAndStore();  // Save DB to file
+dbMaker.bfsAndStore(); // This saves PDB to file
 ```
 
-### 2. Solve Cube with IDA\*
+### Solve a Cube Using IDA\*
 
 ```cpp
 RubiksCubeBitboard cube;
 cube.randomShuffleColor(5);
+
 IDAstarSolver<RubiksCubeBitboard, HashBitboard> solver(cube, "Databases/CornerDB.text");
-auto moves = solver.solve();
+auto solution = solver.solve();
+
+for (auto move : solution)
+    std::cout << cube.getMove(move) << " ";
 ```
 
 ---
 
-## 🙋‍♂️ Author
+## 📌 Author
 
 **Aneesh Singh Rajoriya**
-🚀 Full-stack & Systems Developer | 🚧 Building & Breaking
-📌 Jaipur, India
-🔗 [GitHub](https://github.com/asr-orzz) 
+💼 Full Stack Developer | ⚙️ Systems Builder
+📍 Jaipur, India
+🔗 [GitHub](https://github.com/asr-orzz)
+
 
