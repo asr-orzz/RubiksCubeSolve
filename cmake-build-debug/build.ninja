@@ -79,6 +79,12 @@ build CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj: CXX_COMPILER__RUb
   OBJECT_DIR = CMakeFiles\RUbiks.dir
   OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\Models
 
+build CMakeFiles/RUbiks.dir/PatternDatabases/NibbleArray.cpp.obj: CXX_COMPILER__RUbiks_unscanned_Debug C$:/Users/anees/CLionProjects/RUbiks/PatternDatabases/NibbleArray.cpp || cmake_object_order_depends_target_RUbiks
+  DEP_FILE = CMakeFiles\RUbiks.dir\PatternDatabases\NibbleArray.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\RUbiks.dir
+  OBJECT_FILE_DIR = CMakeFiles\RUbiks.dir\PatternDatabases
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RUbiks
@@ -87,7 +93,7 @@ build CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj: CXX_COMPILER__RUb
 #############################################
 # Link the executable RUbiks.exe
 
-build RUbiks.exe: CXX_EXECUTABLE_LINKER__RUbiks_Debug CMakeFiles/RUbiks.dir/main.cpp.obj CMakeFiles/RUbiks.dir/Models/genericRubiksCube.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube3darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube1darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj
+build RUbiks.exe: CXX_EXECUTABLE_LINKER__RUbiks_Debug CMakeFiles/RUbiks.dir/main.cpp.obj CMakeFiles/RUbiks.dir/Models/genericRubiksCube.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube3darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCube1darray.cpp.obj CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj CMakeFiles/RUbiks.dir/PatternDatabases/NibbleArray.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RUbiks.dir

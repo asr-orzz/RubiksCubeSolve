@@ -3,9 +3,5 @@
 126	3434	7407502389164833	CMakeFiles/RUbiks.dir/Models/RubiksCube3darray.cpp.obj	636b4e77843fb4b0
 17	3907	7401725770297132	CMakeFiles/RUbiks.dir/Models/genericRubiksCube.cpp.obj	9a264ceb0b4a22a0
 33	3832	7401725770457403	CMakeFiles/RUbiks.dir/Models/RubiksCubeBitboard.cpp.obj	691ab5d1f6e6232f
-11	2255	7411879919596810	CMakeFiles/RUbiks.dir/main.cpp.obj	254ca649be03add8
-2256	2525	7411879942042441	RUbiks.exe	31edf14abae63545
-43	3893	7413472633458230	CMakeFiles/RUbiks.dir/main.cpp.obj	254ca649be03add8
-3893	5391	7413472671952128	RUbiks.exe	31edf14abae63545
 28	2255	7415599393570374	CMakeFiles/RUbiks.dir/main.cpp.obj	254ca649be03add8
 2256	2763	7415599415837559	RUbiks.exe	31edf14abae63545
