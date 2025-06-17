@@ -17,4 +17,8 @@ add_executable(RUbiks main.cpp
         PatternDatabases/NibbleArray.cpp
         PatternDatabases/PatternDatabase.h
         PatternDatabases/PatternDatabase.cpp
+        PatternDatabases/CornerPatternDatabase.h
+        PatternDatabases/CornerPatternDatabase.cpp
+        PatternDatabases/CornerDBMaker.h
+        PatternDatabases/CornerDBMaker.cpp
 )
