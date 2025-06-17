@@ -98,16 +98,6 @@ auto solution = solver.solve();
 * **IDA\***: Combines DFS with a heuristic to prune unpromising paths efficiently
 
 ---
-
-## 📌 TODO
-
-* Add edge and center databases
-* Parallelize DB generation
-* Web visualizer or OpenGL viewer
-* Full scrambling and time benchmarking
-
----
-
 ## 🧠 Credits
 
 Built by [Aneesh Singh Rajoriya](https://github.com/asr-orzz)
