@@ -251,7 +251,7 @@ int main() {
 //
 //    cout << (int)cornerDB.getNumMoves(cube) << "\n";
 //
-//    cube.randomShuffleCube(1);
+//    cube.randomShuffleColor(1);
 //    cube.print();
 //    cout << (int)cornerDB.getNumMoves(cube) << "\n";
 //
@@ -261,14 +261,14 @@ int main() {
 
 
 // CornerDBMaker Testing --------------------------------------------------------------------------
-    string fileName = "C:\\Users\\user\\CLionProjects\\rubiks-cube-solver\\Databases\\cornerDepth5V1.txt";
-
+    string fileName = "C:\\Users\\user\\CLionProjects\\RUbiks\\Databases\\CornerDB.text";
+//
 //    Code to create Corner Database
-//    CornerDBMaker dbMaker(fileName, 0x99);
-//    dbMaker.bfsAndStore();
+    CornerDBMaker dbMaker(fileName, 0x99);
+    dbMaker.bfsAndStore();
 
     RubiksCubeBitboard cube;
-    auto shuffleMoves = cube.randomShuffleColor(13);
+    auto shuffleMoves = cube.randomShuffleColor(4);
     cube.print();
     for (auto move: shuffleMoves) cout << cube.getMove(move) << " ";
     cout << "\n";
