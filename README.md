@@ -1,9 +1,28 @@
 
-```markdown
+````markdown
+# 🧊 Rubik's Cube Solver
+
+A C++ project that implements various algorithms to solve a Rubik's Cube, including BFS, DFS, IDDFS, and IDA*. The solver supports multiple internal representations of the cube (1D array, 3D array, and Bitboard) and also uses **Pattern Databases (PDB)** for heuristic optimization.
+
+---
+
+## 🚀 Features
+
+- Multiple cube representations: 3D, 1D, Bitboard
+- Solvers implemented:
+  - Breadth-First Search (BFS)
+  - Depth-First Search (DFS)
+  - Iterative Deepening DFS (IDDFS)
+  - Iterative Deepening A* (IDA\*)
+- Pattern Database (PDB) generation and lookup
+- Heuristic support using Corner Pattern DB
+- Modular and extensible design
+
+---
+
 ## 📁 Project Structure
 
-```
-
+```text
 RubiksCubeSolve/
 ├── Databases/
 │   └── CornerDB.text
@@ -32,12 +51,70 @@ RubiksCubeSolve/
 │   └── IDAstarSOLVER.h
 ├── main.cpp
 ├── CMakeLists.txt
+````
 
+---
+
+## ⚙️ Build Instructions
+
+### ✅ Requirements
+
+* C++17 or above
+* `g++` or `clang++`
+* CMake (optional)
+* IDE like CLion or VSCode with CMake support
+
+### 🛠️ Build (Using CLI)
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+./RubiksCubeSolve
 ```
+
+Or open the folder in **CLion** and hit **Build + Run**.
+
+---
+
+## 📦 Usage
+
+You can modify `main.cpp` to select the cube representation and solver you want to use:
+
+```cpp
+RubiksCubeBitboard cube;
+IDAstarSolver<RubiksCubeBitboard> solver(cube);
+auto solution = solver.solve();
 ```
 
-Just copy-paste that into your `README.md`, and it will render beautifully on GitHub without horizontal scrolling or misalignment.
+---
 
-Let me know if you want me to update the whole `README.md` again with this fixed.
+## 📚 Algorithms Explained
+
+* **BFS**: Explores all states level-by-level
+* **DFS**: Dives deep first, then backtracks
+* **IDDFS**: DFS with increasing depth limits
+* **IDA\***: Combines DFS with a heuristic to prune unpromising paths efficiently
+
+---
+
+## 📌 TODO
+
+* Add edge and center databases
+* Parallelize DB generation
+* Web visualizer or OpenGL viewer
+* Full scrambling and time benchmarking
+
+---
+
+## 🧠 Credits
+
+Built by [Aneesh Singh Rajoriya](https://github.com/asr-orzz)
+
+Based on Rubik's Cube solving algorithms and academic resources.
+
+---
+
 
 
