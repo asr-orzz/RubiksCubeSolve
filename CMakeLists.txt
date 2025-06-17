@@ -21,4 +21,7 @@ add_executable(RUbiks main.cpp
         PatternDatabases/CornerPatternDatabase.cpp
         PatternDatabases/CornerDBMaker.h
         PatternDatabases/CornerDBMaker.cpp
+        PatternDatabases/PermutationIndexer.h
+        PatternDatabases/math.h
+        PatternDatabases/math.cpp
 )
